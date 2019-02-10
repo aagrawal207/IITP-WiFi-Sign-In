@@ -2,11 +2,11 @@ A very simple script to sign-in to the IIT Patna WiFi.
 
 **Caution: The file contains your password in plain text.**
 
-**ProTip: If you use zsh or some other shell which support alias then you can put `alias go='python3 ~/sign-in.py'` or something similar and just run `go` in your terminal when you want to sign-in.**
-
 ### Run
 
 `python sign-in.py` or `python3 sign-in.py`
+
+**ProTip: If you use zsh or some other shell which support aliases then you can put `alias go='python3 ~/sign-in.py'` or something similar in your `~/.zshrc` file and just run `go` in your terminal when you want to sign-in.**
 
 ### Requirements
 
