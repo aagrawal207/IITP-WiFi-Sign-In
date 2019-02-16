@@ -14,11 +14,17 @@ A very simple script to sign-in to the IIT Patna WiFi.
 
 1. Selenium
 
+1. wireless (Python Library)
+
 1. Chromedriver for Chrome or Geckodriver for Firefox
 
 ### Install Selenium
 
 `pip install selenium` or `pip3 install selenium`
+
+### Install wireless
+
+`pip install wireless` or `pip3 install wireless`
 
 ### Install Chromedriver using brew
 
