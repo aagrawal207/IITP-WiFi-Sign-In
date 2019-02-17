@@ -3,30 +3,42 @@ from selenium.webdriver.chrome.options import Options
 import time
 import sys
 from wireless import Wireless
+import requests
 
+# Checking WiFi adapter
 wireless = Wireless()
-
 if not wireless.power():
-	print('[ERROR] WiFi adapter is off.')
+	print('WiFi adapter is off.')
 	sys.exit()
 
 if wireless.current() != 'TESTING':
-	print('[ERROR] Not connected to TESTING. This script will work on TESTING network only.')
-	print('[INFO] Currently connected to the network ' + wireless.current())
+	print('Not connected to TESTING. This script will work on TESTING network only.')
+	print('Currently connected to the network ' + wireless.current())
 	sys.exit()
 
+# Checking if already signed-in
+signedIn = False
+try:
+	req = requests.get('http://clients3.google.com/generate_204')
+	if req.status_code != 204:
+		raise Exception
+	else:
+		signedIn = True
+except:
+	print('Signing In...')
+
+if signedIn:
+	print('Already signed-in.')
+	sys.exit()
+
+
+# Sign In Precedure
 options = Options()
 options.add_argument("--headless")
 browser = webdriver.Chrome(options=options)
 
 SITE = "http://172.16.1.230/" # You can use any http website here
 browser.get(SITE)
-
-try:
-	browser.find_element_by_name('user.username')
-except:
-	print('[INFO] Already signed-in.')
-	sys.exit()
 
 username = browser.find_element_by_name('user.username')
 username.click()
@@ -41,4 +53,5 @@ browser.find_element_by_xpath("//input[@type='submit']").click()
 time.sleep(0.1)
 browser.find_element_by_xpath("//input[@type='submit']").click()
 
-print("[SUCCESS] Login Complete")
+print("Sign-In Complete")
+

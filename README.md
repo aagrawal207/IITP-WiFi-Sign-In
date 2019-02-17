@@ -1,5 +1,7 @@
 A very simple script to sign-in to the IIT Patna WiFi. 
 
+The script takes around ~0.7s if already signed-in and around ~3s if not signed-in.
+
 **Caution: The file contains your password in plain text.**
 
 ### Run
