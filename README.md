@@ -6,7 +6,7 @@ The script takes around ~0.7s if already signed-in and around ~3s if not signed-
 
 ### Run
 
-`python sign-in.py` or `python3 sign-in.py`
+`python3 sign-in.py`
 
 **ProTip: If you use zsh or some other shell which support aliases then you can put `alias go='python3 ~/sign-in.py'` or something similar in your `~/.zshrc` file and just run `go` in your terminal when you want to sign-in.**
 
@@ -14,19 +14,25 @@ The script takes around ~0.7s if already signed-in and around ~3s if not signed-
 
 1. Python3
 
-1. Selenium
+1. Selenium (Python Library)
 
 1. wireless (Python Library)
+
+1. requests (Python Library)
 
 1. Chromedriver for Chrome or Geckodriver for Firefox
 
 ### Install Selenium
 
-`pip install selenium` or `pip3 install selenium`
+`pip3 install selenium`
 
 ### Install wireless
 
-`pip install wireless` or `pip3 install wireless`
+`pip3 install wireless`
+
+### Install requests
+
+`pip3 install requests`
 
 ### Install Chromedriver using brew
 

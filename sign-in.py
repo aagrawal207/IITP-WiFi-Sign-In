@@ -25,7 +25,7 @@ try:
 	else:
 		signedIn = True
 except:
-	print('Signing In...')
+	pass
 
 if signedIn:
 	print('Already signed-in.')

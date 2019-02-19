@@ -1,2 +1,8 @@
+# https://pypi.org/project/selenium/
 selenium==3.141.0
-wireless==0.3.2
+
+# https://pypi.org/project/wireless/
+wireless>=0.3.2
+
+# https://pypi.org/project/requests/
+requests>=2.21.0
