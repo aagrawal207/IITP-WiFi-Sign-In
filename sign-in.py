@@ -54,6 +54,7 @@ def signIn():
 	browser.find_element_by_xpath("//input[@type='submit']").click()
 	time.sleep(0.1)
 	browser.find_element_by_xpath("//input[@type='submit']").click()
+	time.sleep(0.1)
 	browser.quit()
 
 
@@ -64,3 +65,5 @@ isAlreadySignedIn()
 signIn()
 
 print("Sign-In Complete")
+
+
