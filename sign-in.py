@@ -7,10 +7,12 @@ from wireless import Wireless
 
 # Checking WiFi adapter
 def setup_wifi(wireless):
+	print('Checking WiFi adapter.')
 	if not wireless.power():
 		print('WiFi adapter is off.')
 		quit()
 
+	print('Checking WiFi Network.')
 	if wireless.current() != 'TESTING':
 		print("Not connected to the network 'TESTING'.")
 		print("Currently connected to the network '" + wireless.current() + "'.")
@@ -19,6 +21,7 @@ def setup_wifi(wireless):
 
 # Checking if already signed-in
 def isAlreadySignedIn():
+	print('Checking if already signed-in.')
 	signedIn = False
 	try:
 		req = requests.get('http://clients3.google.com/generate_204')
@@ -36,8 +39,9 @@ def isAlreadySignedIn():
 
 # Sign In Precedure
 def signIn():
+	print('Signing-in.')
 	options = Options()
-	options.add_argument("--headless")
+	options.add_argument("--headless") # Remove this to see browser open filling credentials, etc
 	browser = webdriver.Chrome(options=options)
 
 	SITE = "http://172.16.1.230/" # You can use any http website here
@@ -52,9 +56,9 @@ def signIn():
 	password.send_keys("fucker") # YOUR PASSWORD
 
 	browser.find_element_by_xpath("//input[@type='submit']").click()
-	time.sleep(0.1)
+	time.sleep(0.15)
 	browser.find_element_by_xpath("//input[@type='submit']").click()
-	time.sleep(0.1)
+	time.sleep(0.15)
 	browser.quit()
 
 
@@ -65,5 +69,3 @@ isAlreadySignedIn()
 signIn()
 
 print("Sign-In Complete")
-
-
